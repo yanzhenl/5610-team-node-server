@@ -1,0 +1,30 @@
+{
+  "type": "module",
+  "name": "5610-team-node-server",
+  "version": "1.0.0",
+  "description": "Node.js HTTP web server for the Farmer Market application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanzhenl/5610-team-node-server.git"
+  },
+  "keywords": [
+    "Node",
+    "REST",
+    "Server",
+    "HTTP"
+  ],
+  "author": "Yanzhen Li",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yanzhenl/5610-team-node-server/issues"
+  },
+  "homepage": "https://github.com/yanzhenl/5610-team-node-server#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
