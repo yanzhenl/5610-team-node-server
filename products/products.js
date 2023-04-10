@@ -1,0 +1,21 @@
+export default [
+    {
+      "id" : "1",
+      "farmer" : "Bee's Farm",
+      "productName" : "Pineapple",
+      "image" : "pineapple.png",
+      "descriptions" : "Organic pineapple from Hawaii",
+      "price" : "2.00",
+      "availability" : true
+    },
+  
+    {
+      "id" : "2",
+      "farmer" : "Bee's Farm",
+      "productName" : "Apple",
+      "image" : "apples.png",
+      "descriptions" : "Best fresh organic apple",
+      "price" : "3.00",
+      "availability" : true
+    }
+  ]
