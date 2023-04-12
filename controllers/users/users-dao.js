@@ -5,8 +5,8 @@ export const findAllUsers = async () => {
   return users;
 };
 
-export const findAllFaculty = async () => {
-  const users = await usersModel.find({ role: "FACULTY" });
+export const findAllFarmer = async () => {
+  const users = await usersModel.find({ role: "FARMER" });
   return users;
 };
 

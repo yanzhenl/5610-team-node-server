@@ -3,7 +3,8 @@ const usersSchema = mongoose.Schema(
   {
     firstName: String,
     lastName: String,
-    userName: { type: String, unique: true, required: true },
+    businessName: String,
+    username: { type: String, unique: true, required: true },
     password: { type: String, required: true },
     handle: String,
     profilePicture: String,
@@ -15,7 +16,7 @@ const usersSchema = mongoose.Schema(
     followingCount: Number,
     followersCount: Number,
     editing: Boolean,
-    role: { type: String, default: "USER", enum: ["USER", "ADMIN", "FARMER"] }
+    role: { type: String, required: true, enum: ["USER", "ADMIN", "FARMER"] }
   },
   { collection: "users" }
 );
