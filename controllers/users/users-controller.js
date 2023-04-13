@@ -17,6 +17,8 @@ function UsersController(app) {
         const status = await usersDao.deleteUser(id);
         res.json(status);
     };
+
+
     const createUser = async (req, res) => {
         const user = await usersDao.createUser(req.body);
         res.json(user);
@@ -56,7 +58,7 @@ function UsersController(app) {
         if (foundUser) {
             res.sendStatus(409);
         } else {
-            user.role = user.firstName && user.lastName ? "USER" : "FARMER";
+            user.role = user.firstName && user.lastName ? "CONSUMER" : "FARMER";
             const newUser = await usersDao.createUser(user);
             currentUser = newUser;
             res.json(newUser);

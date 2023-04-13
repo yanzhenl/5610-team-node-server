@@ -16,7 +16,7 @@ const usersSchema = mongoose.Schema(
     followingCount: Number,
     followersCount: Number,
     editing: Boolean,
-    role: { type: String, required: true, enum: ["USER", "ADMIN", "FARMER"] }
+    role: { type: String, required: true, enum: ["CONSUMER", "ADMIN", "FARMER"] }
   },
   { collection: "users" }
 );
