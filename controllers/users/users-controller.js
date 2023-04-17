@@ -26,6 +26,7 @@ function UsersController(app) {
     const updateUser = async (req, res) => {
         const id = req.params.id;
         const status = await usersDao.updateUser(id, req.body);
+        currentUser = await usersDao.findUserById(id);
         res.json(status);
     };
     const login = async (req, res) => {
