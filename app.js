@@ -4,16 +4,19 @@ import cors from "cors";
 import HelloController from "./controllers/hello-controller.js";
 import UsersController from "./controllers/users/users-controller.js";
 import dotenv from "dotenv";
+import bodyParser from "body-parser";
 dotenv.config();
 
 const CONNECTION_STRING = process.env.DB_CONNECTION_STRING_TEAM
 mongoose.connect(CONNECTION_STRING);
 
-// mongoose.connect('mongodb://127.0.0.1:27017/Farmer');
 
 const app = express();
 app.use(cors());
-app.use(express.json());
+//app.use(express.json());
+
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 UsersController(app);
 HelloController(app);
