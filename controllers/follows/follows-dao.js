@@ -16,6 +16,6 @@ export const unfollowUser = async (follower, followed) => {
     return await followsModel.deleteOne({ follower, followed });
 };
 
-export const findFollowsByFollowerAndFollowedId = async (follower, followed) => {
+export const findFollowsByFollowerAndFollowed = async (follower, followed) => {
     return await followsModel.findOne({ follower, followed });
 };
