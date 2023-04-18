@@ -53,8 +53,29 @@ function UsersController(app) {
             res.sendStatus(404);
         }
     };
+
+    const templateUser = {
+        profilePicture: "../../images/default-profile.png",
+        bannerPicture: "../../images/default-banner.jpeg",
+        bio: "Share something to let people know more about you.",
+        dateJoined: formatDate(new Date()),
+        followingCount: 0,
+        followersCount: 0,
+    }
+
+    function formatDate(date) {
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        var year = date.getFullYear();
+        var formattedDate = ('0' + month).slice(-2) + '/' + ('0' + day).slice(-2) + '/' + year;
+        return formattedDate;
+    }
+
     const register = async (req, res) => {
-        const user = req.body;
+        const user = {
+            ...req.body,
+            ...templateUser
+        };
         const foundUser = await usersDao.findUserByUsername(req.body.username);
         if (foundUser) {
             res.sendStatus(409);
