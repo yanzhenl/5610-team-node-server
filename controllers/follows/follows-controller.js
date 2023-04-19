@@ -29,10 +29,10 @@ const FollowsController = (app) => {
         const follows = await followsDao.findFollowsByFollowerId(follower);
         res.json(follows);
     };
-    app.post("/api/users/:follower/follows/:followed", userFollowsUser);
+    app.post  ("/api/users/:follower/follows/:followed", userFollowsUser);
     app.delete("/api/users/:follower/follows/:followed", unfollowUser);
-    app.get("/api/followed/:followed/follows", findFollowsByFollowedId);
-    app.get("/api/follower/:follower/follows", findFollowsByFollowerId);
+    app.get   ("/api/users/:followed/follows", findFollowsByFollowedId);
+    app.get   ("/api/users/:follower/follows", findFollowsByFollowerId);
 };
 
 export default FollowsController;
