@@ -5,11 +5,16 @@ export const userFollowsUser = async (follower, followed) => {
 };
 
 export const findFollowsByFollowerId = async (follower) => {
-    return await followsModel({ follower });
+    return await followsModel
+      .find({ follower })
+      .populate("followed")
+      .exec();
 };
 
 export const findFollowsByFollowedId = async (followed) => {
-    return await followsModel({ followed });
+    return await followsModel.find({ followed })
+      .populate("follower")
+      .exec();
 };
 
 export const unfollowUser = async (follower, followed) => {
