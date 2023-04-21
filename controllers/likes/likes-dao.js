@@ -5,15 +5,6 @@ export const findAllLikes = async () => {
     return likes;
 };
 
-export const findLikesById = async (id) => {
-    const like = await likesModel.findById(id);
-    return like;
-};
-
-export const findLikesByPid = async (pid) => {
-    const like = await likesModel.find();
-}
-
 export const createLike = async (like) => {
     const newLike = await likesModel.create(like);
     return newLike;

@@ -9,6 +9,7 @@ import SessionController from "./session-controller.js";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import session from "express-session";
+import CommentsController from "./controllers/comment/comments-controller.js";
 
 
 dotenv.config();
@@ -42,4 +43,5 @@ UsersController(app);
 FollowsController(app);
 HelloController(app);
 LikesController(app);
+CommentsController(app);
 app.listen(process.env.PORT || 8000);
