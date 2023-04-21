@@ -64,16 +64,6 @@ function UsersController(app) {
         }
     };
 
-    const templateUser = {
-        profilePicture: "../../images/default-profile.png",
-        bannerPicture: "../../images/default-banner.jpeg",
-        bio: "Share something to let people know more about you.",
-        dateJoined: formatDate(new Date()),
-        followingCount: 0,
-        followersCount: 0,
-        editing: false, 
-        opened: true,
-    }
 
     function formatDate(date) {
         var month = date.getMonth() + 1;
@@ -84,6 +74,18 @@ function UsersController(app) {
     }
 
     const register = async (req, res) => {
+        const templateUser = {
+            profilePicture: "../../images/default-profile.png",
+            bannerPicture: "../../images/default-banner.jpeg",
+            bio: "Share something to let people know more about you.",
+            dateJoined: formatDate(new Date()),
+            followingCount: 0,
+            followersCount: 0,
+            editing: false,
+            opened: true,
+            handle: `@${req.body.username}`,
+        };
+
         const user = {
             ...req.body,
             ...templateUser
