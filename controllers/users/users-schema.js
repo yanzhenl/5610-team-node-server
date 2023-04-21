@@ -17,7 +17,8 @@ const usersSchema = mongoose.Schema(
     followersCount: Number,
     editing: Boolean,
     role: { type: String, required: true, enum: ["CONSUMER", "ADMIN", "FARMER"] },
-    zipcode: String
+    zipcode: String,
+    opened: {type: Boolean, default: true},
   },
   { collection: "users" }
 );
