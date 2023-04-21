@@ -71,6 +71,8 @@ function UsersController(app) {
         dateJoined: formatDate(new Date()),
         followingCount: 0,
         followersCount: 0,
+        editing: false, 
+        opened: true,
     }
 
     function formatDate(date) {

@@ -15,7 +15,7 @@ const usersSchema = mongoose.Schema(
     dateJoined: String,
     followingCount: Number,
     followersCount: Number,
-    editing: Boolean,
+    editing: {type: Boolean, default: false},
     role: { type: String, required: true, enum: ["CONSUMER", "ADMIN", "FARMER"] },
     zipcode: String,
     opened: {type: Boolean, default: true},
