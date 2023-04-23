@@ -19,6 +19,7 @@ const usersSchema = mongoose.Schema(
     role: { type: String, required: true, enum: ["CONSUMER", "ADMIN", "FARMER"] },
     zipcode: String,
     opened: {type: Boolean, default: true},
+    category_name: String
   },
   { collection: "users" }
 );
