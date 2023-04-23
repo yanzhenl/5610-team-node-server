@@ -84,6 +84,7 @@ function UsersController(app) {
             editing: false,
             opened: true,
             handle: `@${req.body.username}`,
+            category_name: "nothing"
         };
 
         const user = {
