@@ -7,3 +7,7 @@ export const userAddWishList = async (userId, productId) => {
 export const findWishListByUserId = async (userId) => {
   return wishListModel.find({ userId });
 }
+
+export const findWishListByUserIdAndPID = async (userId, productId) => {
+  return wishListModel.findOne({ userId, productId });
+}
