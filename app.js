@@ -4,6 +4,7 @@ import cors from "cors";
 import HelloController from "./controllers/hello-controller.js";
 import UsersController from "./controllers/users/users-controller.js";
 import FollowsController from "./controllers/follows/follows-controller.js";
+import WishListController from "./controllers/wish-list/wishList-controller.js";
 import LikesController from "./controllers/likes/likes-controller.js";
 import SessionController from "./session-controller.js";
 import dotenv from "dotenv";
@@ -41,6 +42,7 @@ app.use(
 SessionController(app);
 UsersController(app);
 FollowsController(app);
+WishListController(app);
 HelloController(app);
 LikesController(app);
 CommentsController(app);
